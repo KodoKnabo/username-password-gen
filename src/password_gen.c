@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <unistd.h>
 
 char pickRandomLower();
 char pickRandomUpper();
+char pickRandomNumber();
+char pickRandomSpecial();
 
 void password_gen(void)
 {
     puts("--- Password Generator ---");
-
-    pickRandomLower();
-    pickRandomUpper();
 }
 
 char pickRandomLower()
@@ -85,6 +85,33 @@ char pickRandomUpper()
     char random;
     srand(time(NULL));
     random = uppers[rand() % 26];
+
+    printf("%c", random);
+
+    return random;
+}
+
+char pickRandomNumber()
+{
+    char numbers[10] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+
+    char random;
+    srand(time(NULL));
+    random = numbers[rand() % 11];
+
+    printf("%c", random);
+
+    return random;
+}
+
+char pickRandomSpecial()
+{
+    // # ? * _ - & ~
+    char specials[7] = {0x23, 0x3F, 0x2A, 0x5F, 0x2D, 0x26, 0x7E};
+
+    char random;
+    srand(time(NULL));
+    random = specials[rand() % 7];
 
     printf("%c", random);
 
