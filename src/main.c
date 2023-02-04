@@ -3,8 +3,7 @@
 
 #include "username_gen.h"
 #include "password_gen.h"
-
-void clearTerminal(void);
+#include "general_functions.h"
 
 int main(void)
 {
@@ -33,13 +32,4 @@ int main(void)
     }
 
     return 0;
-}
-
-void clearTerminal(void)
-{
-    #ifdef _WIN32
-        system("cls");
-    #else
-        system("clear");
-    #endif
 }
