@@ -1,25 +1,48 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include <unistd.h>
 
-void pickRandom();
+void pickRandomVerb();
 
 void username_gen(void)
 {
     puts("--- Username Generator ---");
 
-    pickRandom();
+    pickRandomVerb();
+    sleep(1);
+    pickRandomVerb();
+    sleep(1);
+    pickRandomVerb();
+    sleep(1);
+    pickRandomVerb();
+    sleep(1);
+    pickRandomVerb();
+    sleep(1);
+    pickRandomVerb();
+    sleep(1);
+    pickRandomVerb();
+    sleep(1);
+    pickRandomVerb();
+    sleep(1);
+    pickRandomVerb();
+    sleep(1);
+    pickRandomVerb();
+    sleep(1);
+    pickRandomVerb();
 }
 
-void pickRandom() {
-    char* verbs[3];
-    verbs[0] = "cleaner";
-    verbs[1] = "killer";
-    verbs[2] = "eater";
+void pickRandomVerb() {
+    char* verbs[4];
+    verbs[0] = "cleaner\n";
+    verbs[1] = "killer\n";
+    verbs[2] = "eater\n";
+    verbs[3] = "stealer\n";
+    verbs[4] = "builder\n";
 
     char* random;
     srand(time(NULL));
-    random = verbs[rand() % 3];
+    random = verbs[rand() % 5];
     printf("%s", random);
     return;
 }
