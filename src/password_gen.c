@@ -10,7 +10,20 @@ char pickRandomSpecial();
 
 void password_gen(void)
 {
-    puts("--- Password Generator ---");
+    puts("--- Password Generator ---\n");
+
+   short int passwordLength;
+
+   printf("Password length (by default is 8): ");
+   scanf("%hu", &passwordLength);
+
+    if (passwordLength <= 7 || passwordLength >= 100)
+    {
+        puts("Invalid size entered, the password will be 8 characters.\n");
+        passwordLength = 8;
+    }
+    
+//    printf("%hu\n", passwordLength);
 }
 
 char pickRandomLower()
