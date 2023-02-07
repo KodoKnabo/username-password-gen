@@ -12,18 +12,34 @@ void password_gen(void)
 {
     puts("--- Password Generator ---\n");
 
-   short int passwordLength;
+    short int passwordLength;
 
-   printf("Password length (by default is 8): ");
-   scanf("%hu", &passwordLength);
+    printf("Password length (by default is 8): ");
+    scanf("%hu%*c", &passwordLength);
 
     if (passwordLength <= 7 || passwordLength >= 100)
     {
         puts("Invalid size entered, the password will be 8 characters.\n");
         passwordLength = 8;
     }
-    
-//    printf("%hu\n", passwordLength);
+
+    char includeSpecials;
+
+    printf("Will the password include special characters? (y)es/(n)o: ");
+    scanf("%c", &includeSpecials);
+
+    if (includeSpecials == 'y')
+    {
+        includeSpecials = 'y';
+    } else if (includeSpecials == 'n')
+    {
+        includeSpecials = 'n';
+    } else
+    {
+        puts("ERROR!");
+        puts("Invalid input, password will not contain special chars");
+        includeSpecials = 'n';
+    }
 }
 
 char pickRandomLower()
